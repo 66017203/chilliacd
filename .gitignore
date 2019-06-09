@@ -1,3 +1,5 @@
 /libs/prometheus-cpp
 /libs/mysql-connector-c-noinstall-6.0.2-winx64
 /libs/hiredis
+/.vs
+/x64
