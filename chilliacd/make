@@ -1,0 +1,2 @@
+g++ testxml.cpp tinyxml2.cpp -o app -std=c++11
+g++ -o json testjson.cpp -I../include/ -L../lib/ ../lib/libjsoncpp.a -std=c++11

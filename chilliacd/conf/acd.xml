@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ACDConfig>
+    <self>
+        <ip>192.168.2.232</ip>
+        <port>9064</port>
+    </self>
+    <cm ip="192.168.2.232" port="9985"> <!-- 属性值必须加引号 -->
+        <ip>192.168.2.232</ip>
+        <port>9985</port>
+    </cm>
+    <mysql id="5.7" host="192.168.2.232" port="3306" user="root" passwd="unitcc" db="db">
+        <host>192.168.2.232</host>
+        <port>3306</port>
+        <db>cc</db>
+        <user>root</user>
+        <passwd>unitcc</passwd>
+    </mysql>
+	<redis host="192.168.2.232" port="6379" auth="123456">
+		<host>192.168.2.232</host>
+		<port>6379</port>
+		<auth>123456</auth>
+	</redis>
+	<prometheus port="9068">
+		<port>9068</port>
+	</prometheus>
+</ACDConfig>
+

@@ -1,0 +1,2 @@
+g++ -o app accdPrometheus.cpp -I/usr/local/include/ -llog4cplus -std=c++11 -L/usr/local/lib64 /usr/local/lib64/libprometheus-cpp-pull.a /usr/local/lib64/libprometheus-cpp-core.a /usr/local/lib64/libprometheus-cpp-push.a -lpthread -lz
+

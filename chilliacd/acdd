@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# chkconfig: 2345 08 92
+# pidfile: /var/run/acdd.pid
+#
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Start httpd in the C locale by default.
+SIAD_LANG=${SIAD_LANG-"C"}
+
+siad=${SIAD-/usr/local/acd/acdserver}
+prog=acdserver
+pidfile=${PIDFILE-/var/run/acdd.pid}
+lockfile=${LOCKFILE-/var/lock/subsys/acdd}
+RETVAL=0
+STOP_TIMEOUT=${STOP_TIMEOUT-10}
+
+start() {
+        echo -n $"Starting $prog: "
+        LANG=$SIAD_LANG daemon --pidfile=${pidfile} $siad $OPTIONS
+        RETVAL=$?
+        echo
+        [ $RETVAL = 0 ] && touch ${lockfile}
+        return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc -d ${STOP_TIMEOUT} $siad
+	RETVAL=$?
+	echo
+	[ $RETVAL = 0 ] && rm -f ${pidfile}
+}
+
+# See how we were called.
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  status)
+        status $siad
+	RETVAL=$?
+	;;
+  restart)
+	stop
+	start
+	;;
+  *)
+	echo $"Usage: $prog {start|stop|restart|status}"
+	RETVAL=2
+esac
+
+exit $RETVAL
