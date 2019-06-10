@@ -464,7 +464,7 @@ void ReadConfig2Redis::load_data_from_mysql()
 		"	T.called_tail_del,\n"
 		"	T.called_tail_add\n"
 		"FROM\n"
-		"	cc.callnum T";
+		"	callnum T";
 	std::string sql_callnum_pool = "SELECT\n"
 		"	T.id,\n"
 		"	T.caller,\n"
@@ -473,7 +473,7 @@ void ReadConfig2Redis::load_data_from_mysql()
 		"	T.utime,\n"
 		"	T.ruleid\n"
 		"FROM\n"
-		"	cc.callnum_pool T";
+		"	callnum_pool T";
 	std::string sql_callnum_pool_callnum = "SELECT\n"
 		"	T.id,\n"
 		"	T.callnum_id,\n"
@@ -481,7 +481,7 @@ void ReadConfig2Redis::load_data_from_mysql()
 		"	T.ctime,\n"
 		"	T.utime\n"
 		"FROM\n"
-		"	cc.callnum_pool_callnum T";
+		"	callnum_pool_callnum T";
 	std::string sql_gateway = "SELECT\n"
 		"	T.`id`,\n"
 		"	T.`ip`,\n"
@@ -499,7 +499,7 @@ void ReadConfig2Redis::load_data_from_mysql()
 		"	T.`defaultcaller`,\n"
 		"	T.`sipgwgroupid` \n"
 		"FROM\n"
-		"	cc.sip_gateway T";
+		"	sip_gateway T";
 	std::string sql_gwgroup = "SELECT\n"
 		"	T.`id`,\n"
 		"	T.`algorithm`,\n"

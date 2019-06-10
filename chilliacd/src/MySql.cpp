@@ -289,7 +289,7 @@ namespace DataBase {
             rjc.load_file(configContext.c_str());
             rjc.get_mysql_config(m_Host, m_Port, m_DataBase, m_UserID, m_Password);
         }
-        LOG4CPLUS_ERROR(log, m_id << " [" << m_Host << ":" << m_Port << "] " << m_DataBase << "-" << m_UserID << "-" << m_Password);
+        LOG4CPLUS_INFO(log, m_id << " [" << m_Host << ":" << m_Port << "] " << m_DataBase);
 
 		return true;
 	}
