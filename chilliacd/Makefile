@@ -19,9 +19,9 @@ OUTPUTOBJ = ./obj/
 
 
 CFLAGS = -D__LINUX__ -DLUA_USE_LINUX -DSIGTSTP -DSIGQUIT -DACDVERSION=$(ACDVERSION) -c -Wall -g -static -O0 -Wl,-rpath=./libs
-CXXFLAGS = $(CFLAGS) -std=gnu++0x
+CXXFLAGS = $(CFLAGS) -std=c++11
 
-LDFLAGS= -L/usr/lib64/mysql/ -lmysqlclient -L./. -L/usr/local/lib -L/usr/lib64 -Wl,-Bstatic -static-libstdc++ -static-libgcc -levent_extra -levent_core -levent_pthreads   -Wl,-E -llua -Wl,-Bdynamic -lpthread -lm -ldl -lrt -ljsoncpp -luuid -llog4cplus -Wl,-rpath=./libs
+LDFLAGS= -L/usr/lib64/mysql/ -lmysqlclient -levent_extra -levent_core -levent_pthreads   -Wl,-E -llua -Wl,-Bdynamic -lpthread -lm -ldl -lrt -ljsoncpp -luuid -llog4cplus -Wl,-rpath=./libs
 
 LDPROMETHEUSFLAGS = -L/usr/local/lib64 /usr/local/lib64/libprometheus-cpp-pull.a /usr/local/lib64/libprometheus-cpp-core.a /usr/local/lib64/libprometheus-cpp-push.a -lpthread -lz
 
